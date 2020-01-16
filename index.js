@@ -1,18 +1,15 @@
-var webdriverio = require('webdriverio');
-var path = require('path');
+const webdriverio = require('webdriverio');
+const path = require('path');
 
-var options = {
+let options = {
     desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled:true,
     }
 };
 
-var ms = 300;
-var state = null;
-
-var result = webdriverio
+webdriverio
     .remote(options)
     .init() 
-    .url('https://url.test/')
+    .url('https://test.io/')
     .saveScreenshot(path.join(__dirname,'/index.png')).end();
